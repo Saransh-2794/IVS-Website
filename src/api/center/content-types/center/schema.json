@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "centers",
+  "info": {
+    "singularName": "center",
+    "pluralName": "centers",
+    "displayName": "Center",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "departure_country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::departure-country.departure-country"
+    },
+    "public_holidays_and_closures": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::public-holidays-and-closure.public-holidays-and-closure",
+      "inversedBy": "centers"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "embed_map_link": {
+      "type": "text"
+    },
+    "address": {
+      "type": "blocks"
+    }
+  }
+}

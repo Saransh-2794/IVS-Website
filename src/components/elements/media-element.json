@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_elements_media_elements",
+  "info": {
+    "displayName": "Media Element",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "media_type": {
+      "type": "enumeration",
+      "enum": [
+        "Video",
+        "Image",
+        "Document"
+      ],
+      "required": true
+    }
+  }
+}

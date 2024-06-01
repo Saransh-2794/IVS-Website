@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true
+    },
+    "news_and_articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::news-and-article.news-and-article",
+      "mappedBy": "tags"
+    }
+  }
+}

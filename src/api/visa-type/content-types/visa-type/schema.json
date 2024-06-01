@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visa_types",
+  "info": {
+    "singularName": "visa-type",
+    "pluralName": "visa-types",
+    "displayName": "Visa Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "tabs": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.tab"
+      ]
+    },
+    "content": {
+      "type": "text"
+    },
+    "departure_country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::departure-country.departure-country"
+    }
+  }
+}

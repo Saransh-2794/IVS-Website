@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "public_holidays_and_closures",
+  "info": {
+    "singularName": "public-holidays-and-closure",
+    "pluralName": "public-holidays-and-closures",
+    "displayName": "Public Holidays and Closure",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "holiday": {
+      "type": "string"
+    },
+    "centers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::center.center",
+      "mappedBy": "public_holidays_and_closures"
+    },
+    "day": {
+      "type": "string"
+    }
+  }
+}

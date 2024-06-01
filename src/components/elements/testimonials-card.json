@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_testimonials_cards",
+  "info": {
+    "displayName": "Testimonials Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "review": {
+      "type": "text"
+    },
+    "reviewer_name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    }
+  }
+}
