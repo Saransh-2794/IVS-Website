@@ -875,15 +875,15 @@ export interface ApiCenterCenter extends Schema.CollectionType {
       'oneToOne',
       'api::departure-country.departure-country'
     >;
-    public_holidays_and_closures: Attribute.Relation<
-      'api::center.center',
-      'manyToMany',
-      'api::public-holidays-and-closure.public-holidays-and-closure'
-    >;
     content: Attribute.Blocks;
     phone: Attribute.String;
     embed_map_link: Attribute.Text;
     address: Attribute.Blocks;
+    emirate: Attribute.Relation<
+      'api::center.center',
+      'manyToOne',
+      'api::emirate.emirate'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -927,6 +927,43 @@ export interface ApiDepartureCountryDepartureCountry
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::departure-country.departure-country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEmirateEmirate extends Schema.CollectionType {
+  collectionName: 'emirates';
+  info: {
+    singularName: 'emirate';
+    pluralName: 'emirates';
+    displayName: 'Emirate';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::emirate.emirate', 'title'>;
+    centers: Attribute.Relation<
+      'api::emirate.emirate',
+      'oneToMany',
+      'api::center.center'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::emirate.emirate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::emirate.emirate',
       'oneToOne',
       'admin::user'
     > &
@@ -1028,6 +1065,12 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
         };
       }>;
     heading: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    page_content: Attribute.Blocks &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1223,11 +1266,6 @@ export interface ApiPublicHolidaysAndClosurePublicHolidaysAndClosure
   attributes: {
     date: Attribute.Date;
     holiday: Attribute.String;
-    centers: Attribute.Relation<
-      'api::public-holidays-and-closure.public-holidays-and-closure',
-      'manyToMany',
-      'api::center.center'
-    >;
     day: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1364,6 +1402,7 @@ declare module '@strapi/types' {
       'api::attestation-service.attestation-service': ApiAttestationServiceAttestationService;
       'api::center.center': ApiCenterCenter;
       'api::departure-country.departure-country': ApiDepartureCountryDepartureCountry;
+      'api::emirate.emirate': ApiEmirateEmirate;
       'api::header-link.header-link': ApiHeaderLinkHeaderLink;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::news-and-article.news-and-article': ApiNewsAndArticleNewsAndArticle;

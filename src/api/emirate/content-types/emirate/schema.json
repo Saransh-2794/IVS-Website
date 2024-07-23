@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "emirates",
+  "info": {
+    "singularName": "emirate",
+    "pluralName": "emirates",
+    "displayName": "Emirate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "centers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::center.center",
+      "mappedBy": "emirate"
+    }
+  }
+}

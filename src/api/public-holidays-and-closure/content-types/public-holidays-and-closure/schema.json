@@ -18,12 +18,6 @@
     "holiday": {
       "type": "string"
     },
-    "centers": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::center.center",
-      "mappedBy": "public_holidays_and_closures"
-    },
     "day": {
       "type": "string"
     }

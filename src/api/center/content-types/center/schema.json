@@ -24,12 +24,6 @@
       "relation": "oneToOne",
       "target": "api::departure-country.departure-country"
     },
-    "public_holidays_and_closures": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::public-holidays-and-closure.public-holidays-and-closure",
-      "inversedBy": "centers"
-    },
     "content": {
       "type": "blocks"
     },
@@ -41,6 +35,12 @@
     },
     "address": {
       "type": "blocks"
+    },
+    "emirate": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::emirate.emirate",
+      "inversedBy": "centers"
     }
   }
 }
