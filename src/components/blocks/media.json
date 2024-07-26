@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_media",
+  "info": {
+    "displayName": "Media",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.media-element"
+    }
+  }
+}

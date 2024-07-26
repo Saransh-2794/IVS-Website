@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_tabs",
+  "info": {
+    "displayName": "Tabs"
+  },
+  "options": {},
+  "attributes": {
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.tab"
+    }
+  }
+}
