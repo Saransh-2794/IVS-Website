@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_tabs",
+  "info": {
+    "displayName": "Tab"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}
