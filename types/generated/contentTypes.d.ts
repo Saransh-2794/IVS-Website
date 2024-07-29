@@ -788,6 +788,119 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'Article';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::article.article', 'title'>;
+    date: Attribute.Date;
+    written_by: Attribute.String;
+    country: Attribute.Enumeration<['India', 'United Arab Emirates ']>;
+    hero_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCenterCenter extends Schema.CollectionType {
+  collectionName: 'centers';
+  info: {
+    singularName: 'center';
+    pluralName: 'centers';
+    displayName: 'Center';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::center.center', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    country: Attribute.Enumeration<['India', 'United Arab Emirates']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    embed_map_link: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    address: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::center.center',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::center.center',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::center.center',
+      'oneToMany',
+      'api::center.center'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiHeaderLinkHeaderLink extends Schema.CollectionType {
   collectionName: 'header_links';
   info: {
@@ -866,7 +979,7 @@ export interface ApiNewsAndArticleNewsAndArticle extends Schema.CollectionType {
   info: {
     singularName: 'news-and-article';
     pluralName: 'news-and-articles';
-    displayName: 'News and Article';
+    displayName: 'News';
     description: '';
   };
   options: {
@@ -1153,6 +1266,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::article.article': ApiArticleArticle;
+      'api::center.center': ApiCenterCenter;
       'api::header-link.header-link': ApiHeaderLinkHeaderLink;
       'api::news-and-article.news-and-article': ApiNewsAndArticleNewsAndArticle;
       'api::page.page': ApiPagePage;

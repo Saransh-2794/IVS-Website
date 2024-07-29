@@ -1,71 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface BlocksTestimonials extends Schema.Component {
-  collectionName: 'components_blocks_testimonials';
-  info: {
-    displayName: 'Testimonials';
-  };
-  attributes: {
-    reviews: Attribute.Component<'elements.testimonials-card', true>;
-  };
-}
-
-export interface BlocksTabs extends Schema.Component {
-  collectionName: 'components_blocks_tabs';
-  info: {
-    displayName: 'Tabs';
-  };
-  attributes: {
-    tabs: Attribute.Component<'elements.tab', true>;
-  };
-}
-
-export interface BlocksSlider extends Schema.Component {
-  collectionName: 'components_blocks_sliders';
-  info: {
-    displayName: 'Slider';
-  };
-  attributes: {
-    slides: Attribute.Component<'elements.slide', true>;
-  };
-}
-
-export interface BlocksMedia extends Schema.Component {
-  collectionName: 'components_blocks_media';
-  info: {
-    displayName: 'Media';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.Component<'elements.media-element', true>;
-  };
-}
-
-export interface BlocksHero extends Schema.Component {
-  collectionName: 'components_blocks_heroes';
-  info: {
-    displayName: 'Hero';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    link: Attribute.Component<'elements.button-link'>;
-    description: Attribute.Text;
-  };
-}
-
-export interface BlocksFaqs extends Schema.Component {
-  collectionName: 'components_blocks_faqs';
-  info: {
-    displayName: 'Faqs';
-  };
-  attributes: {
-    title: Attribute.String;
-    faq: Attribute.Component<'elements.faq', true>;
-  };
-}
-
 export interface ElementsTestimonialsCard extends Schema.Component {
   collectionName: 'components_elements_testimonials_cards';
   info: {
@@ -84,10 +18,12 @@ export interface ElementsTab extends Schema.Component {
   collectionName: 'components_elements_tabs';
   info: {
     displayName: 'Tab';
+    description: '';
   };
   attributes: {
     label: Attribute.String;
     content: Attribute.Blocks;
+    content_markdown: Attribute.RichText;
   };
 }
 
@@ -155,15 +91,75 @@ export interface ElementsButtonLink extends Schema.Component {
   };
 }
 
+export interface BlocksTestimonials extends Schema.Component {
+  collectionName: 'components_blocks_testimonials';
+  info: {
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    reviews: Attribute.Component<'elements.testimonials-card', true>;
+  };
+}
+
+export interface BlocksTabs extends Schema.Component {
+  collectionName: 'components_blocks_tabs';
+  info: {
+    displayName: 'Tabs';
+  };
+  attributes: {
+    tabs: Attribute.Component<'elements.tab', true>;
+  };
+}
+
+export interface BlocksSlider extends Schema.Component {
+  collectionName: 'components_blocks_sliders';
+  info: {
+    displayName: 'Slider';
+  };
+  attributes: {
+    slides: Attribute.Component<'elements.slide', true>;
+  };
+}
+
+export interface BlocksMedia extends Schema.Component {
+  collectionName: 'components_blocks_media';
+  info: {
+    displayName: 'Media';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.Component<'elements.media-element', true>;
+  };
+}
+
+export interface BlocksHero extends Schema.Component {
+  collectionName: 'components_blocks_heroes';
+  info: {
+    displayName: 'Hero';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    link: Attribute.Component<'elements.button-link'>;
+    description: Attribute.Text;
+  };
+}
+
+export interface BlocksFaqs extends Schema.Component {
+  collectionName: 'components_blocks_faqs';
+  info: {
+    displayName: 'Faqs';
+  };
+  attributes: {
+    title: Attribute.String;
+    faq: Attribute.Component<'elements.faq', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'blocks.testimonials': BlocksTestimonials;
-      'blocks.tabs': BlocksTabs;
-      'blocks.slider': BlocksSlider;
-      'blocks.media': BlocksMedia;
-      'blocks.hero': BlocksHero;
-      'blocks.faqs': BlocksFaqs;
       'elements.testimonials-card': ElementsTestimonialsCard;
       'elements.tab': ElementsTab;
       'elements.slide': ElementsSlide;
@@ -171,6 +167,12 @@ declare module '@strapi/types' {
       'elements.media-element': ElementsMediaElement;
       'elements.faq': ElementsFaq;
       'elements.button-link': ElementsButtonLink;
+      'blocks.testimonials': BlocksTestimonials;
+      'blocks.tabs': BlocksTabs;
+      'blocks.slider': BlocksSlider;
+      'blocks.media': BlocksMedia;
+      'blocks.hero': BlocksHero;
+      'blocks.faqs': BlocksFaqs;
     }
   }
 }
