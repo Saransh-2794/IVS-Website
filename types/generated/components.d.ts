@@ -18,10 +18,12 @@ export interface ElementsTab extends Schema.Component {
   collectionName: 'components_elements_tabs';
   info: {
     displayName: 'Tab';
+    description: '';
   };
   attributes: {
     label: Attribute.String;
     content: Attribute.Blocks;
+    content_markdown: Attribute.RichText;
   };
 }
 
@@ -138,7 +140,7 @@ export interface BlocksHero extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     link: Attribute.Component<'elements.button-link'>;
     description: Attribute.Text;
   };
