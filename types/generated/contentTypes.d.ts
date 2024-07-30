@@ -831,6 +831,7 @@ export interface ApiCenterCenter extends Schema.CollectionType {
     singularName: 'center';
     pluralName: 'centers';
     displayName: 'Center';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -865,7 +866,7 @@ export interface ApiCenterCenter extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    embed_map_link: Attribute.String &
+    embed_map_link: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
