@@ -11,9 +11,6 @@
     },
     "content": {
       "type": "blocks"
-    },
-    "content_markdown": {
-      "type": "richtext"
     }
   }
 }

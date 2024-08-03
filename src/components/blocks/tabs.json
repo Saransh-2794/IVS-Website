@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_tabs",
   "info": {
-    "displayName": "Tabs"
+    "displayName": "Tabs",
+    "description": ""
   },
   "options": {},
   "attributes": {

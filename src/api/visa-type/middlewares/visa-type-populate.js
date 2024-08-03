@@ -1,17 +1,6 @@
 "use strict";
 
-/**
- * `landing-page-populate` middleware
- */
 const populate = {
-  metadata: {
-    populate: {
-      metaImage: {
-        populate: true,
-        fields: ["name", "alternativeText", "url"],
-      },
-    },
-  },
   blocks: {
     populate: {
       link: {
@@ -64,12 +53,15 @@ const populate = {
       },
     },
   },
+  tabs: {
+    populate: true,
+  },
 };
 
 module.exports = (config, { strapi }) => {
   // Add your own logic here.
   return async (ctx, next) => {
-    strapi.log.info("In page-populate middleware.");
+    strapi.log.info("In visa-type-populate middleware.");
     ctx.query = {
       populate,
       ...ctx.query,

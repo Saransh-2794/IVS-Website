@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_rows",
+  "info": {
+    "displayName": "Row"
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    }
+  }
+}

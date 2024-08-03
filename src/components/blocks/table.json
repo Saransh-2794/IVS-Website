@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_tables",
+  "info": {
+    "displayName": "Table"
+  },
+  "options": {},
+  "attributes": {
+    "rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.row"
+    }
+  }
+}

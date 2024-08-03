@@ -23,7 +23,6 @@ export interface ElementsTab extends Schema.Component {
   attributes: {
     label: Attribute.String;
     content: Attribute.Blocks;
-    content_markdown: Attribute.RichText;
   };
 }
 
@@ -37,6 +36,18 @@ export interface ElementsSlide extends Schema.Component {
     title: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Attribute.String;
+  };
+}
+
+export interface ElementsRow extends Schema.Component {
+  collectionName: 'components_elements_rows';
+  info: {
+    displayName: 'Row';
+  };
+  attributes: {
+    service: Attribute.String;
+    description: Attribute.String;
+    amount: Attribute.String;
   };
 }
 
@@ -105,9 +116,20 @@ export interface BlocksTabs extends Schema.Component {
   collectionName: 'components_blocks_tabs';
   info: {
     displayName: 'Tabs';
+    description: '';
   };
   attributes: {
     tabs: Attribute.Component<'elements.tab', true>;
+  };
+}
+
+export interface BlocksTable extends Schema.Component {
+  collectionName: 'components_blocks_tables';
+  info: {
+    displayName: 'Table';
+  };
+  attributes: {
+    rows: Attribute.Component<'elements.row', true>;
   };
 }
 
@@ -163,12 +185,14 @@ declare module '@strapi/types' {
       'elements.testimonials-card': ElementsTestimonialsCard;
       'elements.tab': ElementsTab;
       'elements.slide': ElementsSlide;
+      'elements.row': ElementsRow;
       'elements.nested-links': ElementsNestedLinks;
       'elements.media-element': ElementsMediaElement;
       'elements.faq': ElementsFaq;
       'elements.button-link': ElementsButtonLink;
       'blocks.testimonials': BlocksTestimonials;
       'blocks.tabs': BlocksTabs;
+      'blocks.table': BlocksTable;
       'blocks.slider': BlocksSlider;
       'blocks.media': BlocksMedia;
       'blocks.hero': BlocksHero;

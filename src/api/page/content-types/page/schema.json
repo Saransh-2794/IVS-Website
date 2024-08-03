@@ -54,7 +54,8 @@
         "blocks.faqs",
         "blocks.slider",
         "blocks.testimonials",
-        "blocks.tabs"
+        "blocks.tabs",
+        "blocks.table"
       ]
     },
     "Country": {
