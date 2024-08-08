@@ -944,7 +944,7 @@ export interface ApiHeaderLinkHeaderLink extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Country: Attribute.Enumeration<['United Arab Emirates', 'India']> &
+    country: Attribute.Enumeration<['United Arab Emirates', 'India']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1095,7 +1095,7 @@ export interface ApiPagePage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Country: Attribute.Enumeration<['India', 'United Arab Emirates']> &
+    country: Attribute.Enumeration<['India', 'United Arab Emirates']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1212,7 +1212,7 @@ export interface ApiVisaTypeVisaType extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Country: Attribute.Enumeration<['India', 'United Arab Emirates']> &
+    country: Attribute.Enumeration<['India', 'United Arab Emirates']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

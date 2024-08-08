@@ -52,7 +52,7 @@
       },
       "component": "elements.nested-links"
     },
-    "Country": {
+    "country": {
       "pluginOptions": {
         "i18n": {
           "localized": true

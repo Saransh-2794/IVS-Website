@@ -57,7 +57,7 @@
         "blocks.tabs"
       ]
     },
-    "Country": {
+    "country": {
       "pluginOptions": {
         "i18n": {
           "localized": true
