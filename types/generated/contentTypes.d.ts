@@ -825,6 +825,68 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiAttestationServiceAttestationService
+  extends Schema.CollectionType {
+  collectionName: 'attestation_services';
+  info: {
+    singularName: 'attestation-service';
+    pluralName: 'attestation-services';
+    displayName: 'Attestation Service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<
+      'api::attestation-service.attestation-service',
+      'title'
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    tabs: Attribute.Component<'elements.tab', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::attestation-service.attestation-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::attestation-service.attestation-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::attestation-service.attestation-service',
+      'oneToMany',
+      'api::attestation-service.attestation-service'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCenterCenter extends Schema.CollectionType {
   collectionName: 'centers';
   info: {
@@ -1119,6 +1181,65 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiPassportServicePassportService
+  extends Schema.CollectionType {
+  collectionName: 'passport_services';
+  info: {
+    singularName: 'passport-service';
+    pluralName: 'passport-services';
+    displayName: 'Passport Service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::passport-service.passport-service', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    tabs: Attribute.Component<'elements.tab', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::passport-service.passport-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::passport-service.passport-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::passport-service.passport-service',
+      'oneToMany',
+      'api::passport-service.passport-service'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiPublicHolidayPublicHoliday extends Schema.CollectionType {
   collectionName: 'public_holidays';
   info: {
@@ -1275,10 +1396,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
+      'api::attestation-service.attestation-service': ApiAttestationServiceAttestationService;
       'api::center.center': ApiCenterCenter;
       'api::header-link.header-link': ApiHeaderLinkHeaderLink;
       'api::news-and-article.news-and-article': ApiNewsAndArticleNewsAndArticle;
       'api::page.page': ApiPagePage;
+      'api::passport-service.passport-service': ApiPassportServicePassportService;
       'api::public-holiday.public-holiday': ApiPublicHolidayPublicHoliday;
       'api::visa-type.visa-type': ApiVisaTypeVisaType;
     }
