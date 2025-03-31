@@ -807,6 +807,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     country: Attribute.Enumeration<['India', 'United Arab Emirates ']>;
     hero_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     content: Attribute.Blocks;
+    metaData: Attribute.Component<'seo.meta-data'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1084,6 +1085,12 @@ export interface ApiNewsAndArticleNewsAndArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    metaData: Attribute.Component<'seo.meta-data'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1160,6 +1167,12 @@ export interface ApiPagePage extends Schema.CollectionType {
         };
       }>;
     country: Attribute.Enumeration<['India', 'United Arab Emirates']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaData: Attribute.Component<'seo.meta-data'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1348,6 +1361,12 @@ export interface ApiVisaTypeVisaType extends Schema.CollectionType {
         };
       }>;
     blocks: Attribute.DynamicZone<['blocks.table']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaData: Attribute.Component<'seo.meta-data'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

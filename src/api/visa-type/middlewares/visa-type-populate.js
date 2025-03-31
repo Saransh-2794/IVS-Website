@@ -50,12 +50,15 @@ const populate = {
       },
       rows: {
         populate: true,
-      },
+      }
     },
   },
   tabs: {
     populate: true,
   },
+  metaData: {
+    populate: true,
+  }
 };
 
 module.exports = (config, { strapi }) => {

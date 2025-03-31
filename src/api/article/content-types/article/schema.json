@@ -45,6 +45,11 @@
     },
     "content": {
       "type": "blocks"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta-data"
     }
   }
 }
