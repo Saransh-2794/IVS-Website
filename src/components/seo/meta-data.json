@@ -1,7 +1,8 @@
 {
   "collectionName": "components_seo_meta_data",
   "info": {
-    "displayName": "Meta Data"
+    "displayName": "Meta Data",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,11 +13,18 @@
       "type": "text"
     },
     "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "keywords": {
+      "type": "text"
+    },
+    "canonical": {
+      "type": "text"
     }
   }
 }

@@ -4,11 +4,14 @@ export interface SeoMetaData extends Schema.Component {
   collectionName: 'components_seo_meta_data';
   info: {
     displayName: 'Meta Data';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     metaDescription: Attribute.Text;
     metaImage: Attribute.Media<'images'>;
+    keywords: Attribute.Text;
+    canonical: Attribute.Text;
   };
 }
 

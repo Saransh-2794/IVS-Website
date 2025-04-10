@@ -4,7 +4,8 @@
   "info": {
     "singularName": "passport-service",
     "pluralName": "passport-services",
-    "displayName": "Passport Service"
+    "displayName": "Passport Service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -41,6 +42,16 @@
         }
       },
       "component": "elements.tab"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "seo.meta-data"
     }
   }
 }

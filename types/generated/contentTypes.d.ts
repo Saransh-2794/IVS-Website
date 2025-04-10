@@ -1201,6 +1201,7 @@ export interface ApiPassportServicePassportService
     singularName: 'passport-service';
     pluralName: 'passport-services';
     displayName: 'Passport Service';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1224,6 +1225,12 @@ export interface ApiPassportServicePassportService
         };
       }>;
     tabs: Attribute.Component<'elements.tab', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaData: Attribute.Component<'seo.meta-data'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

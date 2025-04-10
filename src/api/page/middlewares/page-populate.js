@@ -64,6 +64,9 @@ const populate = {
       },
     },
   },
+  metaData: {
+    populate: true,
+  }
 };
 
 module.exports = (config, { strapi }) => {
