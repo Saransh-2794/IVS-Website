@@ -65,7 +65,11 @@ const populate = {
     },
   },
   metaData: {
-    populate: true,
+    populate: {
+      metaImage: {
+        fields: ["name", "alternativeText", "url"],
+      },
+    }
   }
 };
 
